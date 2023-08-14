@@ -1,5 +1,7 @@
 package inet.dmsx.DMSXClient;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -15,6 +17,16 @@ class DMSXClientTest {
     private final DMSXClient client = new DMSXClient("http://localhost:8080");
     private final ParamsStruct params = new ParamsStruct("tmp", "2023_08", "test.txt");
     private final Path testPath = Paths.get("src/test/resources/test.txt");
+
+    @BeforeEach
+    void beforeEach() throws URISyntaxException, IOException, InterruptedException {
+        uploadFile();
+    }
+
+    @AfterEach
+    void afterEach() throws URISyntaxException, IOException, InterruptedException {
+        deleteFile();
+    }
 
     @Test
     void uploadFile() throws URISyntaxException, IOException, InterruptedException {
@@ -36,9 +48,32 @@ class DMSXClientTest {
     }
 
     @Test
+    void deleteFile() throws URISyntaxException, IOException, InterruptedException {
+        var response = client.deleteFile(params);
+
+        assertEquals(200, response.statusCode());
+    }
+
+    @Test
+    void infoFile() throws URISyntaxException, IOException, InterruptedException {
+        var response = client.infoFile(params);
+
+        assertEquals(200, response.statusCode());
+        assertEquals("9", response.body());
+    }
+
+    @Test
     void pingServer() throws URISyntaxException, IOException, InterruptedException {
         var response = client.pingServer();
 
         assertEquals(200, response.statusCode());
+    }
+
+    @Test
+    void checksumFile() throws URISyntaxException, IOException, InterruptedException {
+        var response = client.checksumFile(params);
+
+        assertEquals(200, response.statusCode());
+        assertEquals("661d154abfc42a49970f3d53b758fd50", response.body());
     }
 }

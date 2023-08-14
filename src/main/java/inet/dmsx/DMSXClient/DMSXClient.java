@@ -36,9 +36,36 @@ public class DMSXClient {
         return client.send(request, HttpResponse.BodyHandlers.ofInputStream());
     }
 
+    public HttpResponse<String> deleteFile(ParamsStruct params) throws URISyntaxException, IOException, InterruptedException {
+        var request = HttpRequest.newBuilder()
+                .uri(getUriWithParams(params))
+                .DELETE()
+                .build();
+
+        return client.send(request, HttpResponse.BodyHandlers.ofString());
+    }
+
+    public HttpResponse<String> infoFile(ParamsStruct params) throws URISyntaxException, IOException, InterruptedException {
+        var request = HttpRequest.newBuilder()
+                .uri(new URI(getUriWithParams(params) + "/info"))
+                .GET()
+                .build();
+
+        return client.send(request, HttpResponse.BodyHandlers.ofString());
+    }
+
     public HttpResponse<String> pingServer() throws URISyntaxException, IOException, InterruptedException {
         var request = HttpRequest.newBuilder()
                 .uri(new URI(uri + "/ping"))
+                .GET()
+                .build();
+
+        return client.send(request, HttpResponse.BodyHandlers.ofString());
+    }
+
+    public HttpResponse<String> checksumFile(ParamsStruct params) throws URISyntaxException, IOException, InterruptedException {
+        var request = HttpRequest.newBuilder()
+                .uri(new URI(getUriWithParams(params) + "/checksum"))
                 .GET()
                 .build();
 
