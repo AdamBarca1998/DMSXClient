@@ -76,4 +76,25 @@ class DMSXClientTest {
         assertEquals(200, response.statusCode());
         assertEquals("661d154abfc42a49970f3d53b758fd50", response.body());
     }
+
+    @Test
+    void pauseServerAndResumeServer() throws URISyntaxException, IOException, InterruptedException {
+        // test in run state
+        infoFile();
+
+        // pause
+        var pauseResponse = client.pauseServer();
+        assertEquals(200, pauseResponse.statusCode());
+
+        // test in pause state
+        var infoResponse = client.infoFile(params);
+        assertEquals(405, infoResponse.statusCode());
+
+        // resume
+        var resumeResponse = client.resumeServer();
+        assertEquals(200, resumeResponse.statusCode());
+
+        // test in run state
+        infoFile();
+    }
 }

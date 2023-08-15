@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65984bc5-384f-4c3f-8a14-d09e8ed7f7f5" name="Changes" comment="IMPL upload, get, ping">
+    <list default="true" id="65984bc5-384f-4c3f-8a14-d09e8ed7f7f5" name="Changes" comment="IMPL checksum, info, delete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/DMSXClient/DMSXClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/DMSXClient/DMSXClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/inet/dmsx/DMSXClient/DMSXClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/inet/dmsx/DMSXClient/DMSXClientTest.java" afterDir="false" />
@@ -167,7 +167,9 @@
       <option name="presentableId" value="Default" />
       <updated>1691750147584</updated>
       <workItem from="1691750148765" duration="5289000" />
-      <workItem from="1692002870673" duration="624000" />
+      <workItem from="1692002870673" duration="3847000" />
+      <workItem from="1692087830102" duration="13000" />
+      <workItem from="1692088466770" duration="1027000" />
     </task>
     <task id="LOCAL-00001" summary="INIT Commit">
       <created>1691750251804</created>
@@ -183,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691762115287</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="IMPL checksum, info, delete">
+      <created>1692003680068</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1692003680068</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,7 +201,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="INIT Commit" />
     <MESSAGE value="IMPL upload, get, ping" />
-    <option name="LAST_COMMIT_MESSAGE" value="IMPL upload, get, ping" />
+    <MESSAGE value="IMPL checksum, info, delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="IMPL checksum, info, delete" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

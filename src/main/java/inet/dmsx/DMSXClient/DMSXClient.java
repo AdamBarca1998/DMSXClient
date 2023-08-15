@@ -9,7 +9,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Path;
 
-public class DMSXClient {
+public final class DMSXClient {
 
     private final String uri;
     private final HttpClient client = HttpClient.newBuilder().build();
@@ -67,6 +67,24 @@ public class DMSXClient {
         var request = HttpRequest.newBuilder()
                 .uri(new URI(getUriWithParams(params) + "/checksum"))
                 .GET()
+                .build();
+
+        return client.send(request, HttpResponse.BodyHandlers.ofString());
+    }
+
+    public HttpResponse<String> pauseServer() throws URISyntaxException, IOException, InterruptedException {
+        var request = HttpRequest.newBuilder()
+                .uri(new URI(uri + "/management/pause"))
+                .PUT(HttpRequest.BodyPublishers.ofString(""))
+                .build();
+
+        return client.send(request, HttpResponse.BodyHandlers.ofString());
+    }
+
+    public HttpResponse<String> resumeServer() throws URISyntaxException, IOException, InterruptedException {
+        var request = HttpRequest.newBuilder()
+                .uri(new URI(uri + "/management/resume"))
+                .PUT(HttpRequest.BodyPublishers.ofString(""))
                 .build();
 
         return client.send(request, HttpResponse.BodyHandlers.ofString());
