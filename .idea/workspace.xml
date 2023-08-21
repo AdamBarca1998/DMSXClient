@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65984bc5-384f-4c3f-8a14-d09e8ed7f7f5" name="Changes" comment="IMPL checksum, info, delete">
+    <list default="true" id="65984bc5-384f-4c3f-8a14-d09e8ed7f7f5" name="Changes" comment="IMPL pause, resume">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/DMSXClient/DMSXClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/DMSXClient/DMSXClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/inet/dmsx/DMSXClient/DMSXClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/inet/dmsx/DMSXClient/DMSXClientTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,10 +79,7 @@
       <recent name="inet.dmsx.DMSXClient" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DMSXClientTest">
-    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="JUnit.DMSXClientTest.shutdown">
     <configuration name="DMSXClientTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DMSXClient" />
       <extension name="coverage">
@@ -132,6 +127,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DMSXClientTest.shutdown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DMSXClient" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="inet.dmsx.DMSXClient.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="inet.dmsx.DMSXClient" />
+      <option name="MAIN_CLASS_NAME" value="inet.dmsx.DMSXClient.DMSXClientTest" />
+      <option name="METHOD_NAME" value="shutdown" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DMSXClientTest.uploadFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DMSXClient" />
       <extension name="coverage">
@@ -150,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DMSXClientTest.shutdown" />
         <item itemvalue="JUnit.DMSXClientTest" />
         <item itemvalue="JUnit.DMSXClientTest.deleteFile" />
         <item itemvalue="JUnit.DMSXClientTest.uploadFile" />
         <item itemvalue="JUnit.DMSXClientTest.getFile" />
-        <item itemvalue="HTTP Request.generated-requests | #2" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +180,7 @@
       <workItem from="1691750148765" duration="5289000" />
       <workItem from="1692002870673" duration="3847000" />
       <workItem from="1692087830102" duration="13000" />
-      <workItem from="1692088466770" duration="1027000" />
+      <workItem from="1692088466770" duration="5158000" />
     </task>
     <task id="LOCAL-00001" summary="INIT Commit">
       <created>1691750251804</created>
@@ -192,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692003680068</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="IMPL pause, resume">
+      <created>1692094118667</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1692094118667</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,7 +220,8 @@
     <MESSAGE value="INIT Commit" />
     <MESSAGE value="IMPL upload, get, ping" />
     <MESSAGE value="IMPL checksum, info, delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="IMPL checksum, info, delete" />
+    <MESSAGE value="IMPL pause, resume" />
+    <option name="LAST_COMMIT_MESSAGE" value="IMPL pause, resume" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

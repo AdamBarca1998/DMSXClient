@@ -90,6 +90,15 @@ public final class DMSXClient {
         return client.send(request, HttpResponse.BodyHandlers.ofString());
     }
 
+    public HttpResponse<String> shutdownServer() throws URISyntaxException, IOException, InterruptedException {
+        var request = HttpRequest.newBuilder()
+                .uri(new URI(uri + "/management/shutdown"))
+                .PUT(HttpRequest.BodyPublishers.ofString(""))
+                .build();
+
+        return client.send(request, HttpResponse.BodyHandlers.ofString());
+    }
+
     private URI getUriWithParams(ParamsStruct params) throws URISyntaxException {
         return new URI(uri + "/" + params.storageId() + "/" + params.directory() + "/" + params.fileName());
     }
