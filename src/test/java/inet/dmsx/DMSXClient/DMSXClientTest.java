@@ -97,4 +97,11 @@ class DMSXClientTest {
         // test in run state
         infoFile();
     }
+
+    @Test
+    void heathServer() throws URISyntaxException, IOException, InterruptedException {
+        var response = client.heathServer();
+
+        assertEquals("RunState", response.state());
+    }
 }

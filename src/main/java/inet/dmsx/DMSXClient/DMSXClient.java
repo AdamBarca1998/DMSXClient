@@ -1,5 +1,8 @@
 package inet.dmsx.DMSXClient;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import inet.dmsx.DMSXClient.dto.HealthDto;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
@@ -13,6 +16,7 @@ public final class DMSXClient {
 
     private final String uri;
     private final HttpClient client = HttpClient.newBuilder().build();
+    private final ObjectMapper mapper = new ObjectMapper();
 
     public DMSXClient(String uri) {
         this.uri = uri;
@@ -97,6 +101,18 @@ public final class DMSXClient {
                 .build();
 
         return client.send(request, HttpResponse.BodyHandlers.ofString());
+    }
+
+    public HealthDto heathServer() throws URISyntaxException, IOException, InterruptedException {
+        var request = HttpRequest.newBuilder()
+                .uri(new URI(uri + "/health"))
+                .GET()
+                .header("Accept", "application/json")
+                .build();
+
+        var s = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        return mapper.readValue(s.body(), HealthDto.class);
     }
 
     private URI getUriWithParams(ParamsStruct params) throws URISyntaxException {
