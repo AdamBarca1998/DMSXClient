@@ -26,6 +26,7 @@ public final class DMSXClient {
         var request = HttpRequest.newBuilder()
                 .uri(getUriWithParams(params))
                 .POST(HttpRequest.BodyPublishers.ofFile(path))
+                .version(HttpClient.Version.HTTP_2)
                 .build();
 
         return client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -35,6 +36,7 @@ public final class DMSXClient {
         var request = HttpRequest.newBuilder()
                 .uri(getUriWithParams(params))
                 .GET()
+                .version(HttpClient.Version.HTTP_2)
                 .build();
 
         return client.send(request, HttpResponse.BodyHandlers.ofInputStream());
@@ -44,6 +46,7 @@ public final class DMSXClient {
         var request = HttpRequest.newBuilder()
                 .uri(getUriWithParams(params))
                 .DELETE()
+                .version(HttpClient.Version.HTTP_2)
                 .build();
 
         return client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -53,6 +56,7 @@ public final class DMSXClient {
         var request = HttpRequest.newBuilder()
                 .uri(new URI(getUriWithParams(params) + "/info"))
                 .GET()
+                .version(HttpClient.Version.HTTP_2)
                 .build();
 
         return client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -62,6 +66,7 @@ public final class DMSXClient {
         var request = HttpRequest.newBuilder()
                 .uri(new URI(uri + "/ping"))
                 .GET()
+                .version(HttpClient.Version.HTTP_2)
                 .build();
 
         return client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -71,6 +76,7 @@ public final class DMSXClient {
         var request = HttpRequest.newBuilder()
                 .uri(new URI(getUriWithParams(params) + "/checksum"))
                 .GET()
+                .version(HttpClient.Version.HTTP_2)
                 .build();
 
         return client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -80,6 +86,7 @@ public final class DMSXClient {
         var request = HttpRequest.newBuilder()
                 .uri(new URI(uri + "/management/pause"))
                 .PUT(HttpRequest.BodyPublishers.ofString(""))
+                .version(HttpClient.Version.HTTP_2)
                 .build();
 
         return client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -89,6 +96,7 @@ public final class DMSXClient {
         var request = HttpRequest.newBuilder()
                 .uri(new URI(uri + "/management/resume"))
                 .PUT(HttpRequest.BodyPublishers.ofString(""))
+                .version(HttpClient.Version.HTTP_2)
                 .build();
 
         return client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -98,6 +106,7 @@ public final class DMSXClient {
         var request = HttpRequest.newBuilder()
                 .uri(new URI(uri + "/management/shutdown"))
                 .PUT(HttpRequest.BodyPublishers.ofString(""))
+                .version(HttpClient.Version.HTTP_2)
                 .build();
 
         return client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -107,6 +116,7 @@ public final class DMSXClient {
         var request = HttpRequest.newBuilder()
                 .uri(new URI(uri + "/health"))
                 .GET()
+                .version(HttpClient.Version.HTTP_2)
                 .header("Accept", "application/json")
                 .build();
 
