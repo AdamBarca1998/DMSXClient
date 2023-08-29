@@ -9,6 +9,7 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -36,7 +37,7 @@ class DMSXClientTest {
     }
 
     @Test
-    void getFile() throws URISyntaxException, IOException, InterruptedException {
+    void getExistFile() throws URISyntaxException, IOException, InterruptedException {
         var response = client.getFile(params);
 
         try (var inputStream = response.body()) {
@@ -48,6 +49,13 @@ class DMSXClientTest {
     }
 
     @Test
+    void getNotExistFile() throws URISyntaxException, IOException, InterruptedException {
+        var response = client.getFile(new ParamsStruct(params.storageId(), params.directory(), UUID.randomUUID().toString()));
+
+        assertEquals(500, response.statusCode());
+    }
+
+    @Test
     void deleteFile() throws URISyntaxException, IOException, InterruptedException {
         var response = client.deleteFile(params);
 
@@ -55,11 +63,18 @@ class DMSXClientTest {
     }
 
     @Test
-    void infoFile() throws URISyntaxException, IOException, InterruptedException {
+    void infoExistFile() throws URISyntaxException, IOException, InterruptedException {
         var response = client.infoFile(params);
 
         assertEquals(200, response.statusCode());
         assertEquals("9", response.body());
+    }
+
+    @Test
+    void infoNotExistFile() throws URISyntaxException, IOException, InterruptedException {
+        var response = client.infoFile(new ParamsStruct(params.storageId(), params.directory(), UUID.randomUUID().toString()));
+
+        assertEquals(500, response.statusCode());
     }
 
     @Test
@@ -70,7 +85,7 @@ class DMSXClientTest {
     }
 
     @Test
-    void checksumFile() throws URISyntaxException, IOException, InterruptedException {
+    void checksumExistFile() throws URISyntaxException, IOException, InterruptedException {
         var response = client.checksumFile(params);
 
         assertEquals(200, response.statusCode());
@@ -78,9 +93,17 @@ class DMSXClientTest {
     }
 
     @Test
+    void checksumNotExistFile() throws URISyntaxException, IOException, InterruptedException {
+        var response = client.checksumFile(new ParamsStruct(params.storageId(), params.directory(), UUID.randomUUID().toString()));
+
+        assertEquals(500, response.statusCode());
+    }
+
+
+    @Test
     void pauseServerAndResumeServer() throws URISyntaxException, IOException, InterruptedException {
         // test in run state
-        infoFile();
+        infoExistFile();
 
         // pause
         var pauseResponse = client.pauseServer();
@@ -95,7 +118,7 @@ class DMSXClientTest {
         assertEquals(200, resumeResponse.statusCode());
 
         // test in run state
-        infoFile();
+        infoExistFile();
     }
 
     @Test

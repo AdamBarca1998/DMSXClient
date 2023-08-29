@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65984bc5-384f-4c3f-8a14-d09e8ed7f7f5" name="Changes" comment="IMPL health">
+    <list default="true" id="65984bc5-384f-4c3f-8a14-d09e8ed7f7f5" name="Changes" comment="UPD to http2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/inet/dmsx/DMSXClient/DMSXClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/inet/dmsx/DMSXClient/DMSXClientTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +98,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DMSXClientTest.deleteFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DMSXClientTest.getNotExistFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DMSXClient" />
       <extension name="coverage">
         <pattern>
@@ -107,13 +108,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="inet.dmsx.DMSXClient" />
       <option name="MAIN_CLASS_NAME" value="inet.dmsx.DMSXClient.DMSXClientTest" />
-      <option name="METHOD_NAME" value="deleteFile" />
+      <option name="METHOD_NAME" value="getNotExistFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DMSXClientTest.heathServer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DMSXClientTest.infoFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DMSXClient" />
       <extension name="coverage">
         <pattern>
@@ -123,13 +124,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="inet.dmsx.DMSXClient" />
       <option name="MAIN_CLASS_NAME" value="inet.dmsx.DMSXClient.DMSXClientTest" />
-      <option name="METHOD_NAME" value="heathServer" />
+      <option name="METHOD_NAME" value="infoFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DMSXClientTest.pingServer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DMSXClientTest.infoNotExistFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DMSXClient" />
       <extension name="coverage">
         <pattern>
@@ -139,13 +140,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="inet.dmsx.DMSXClient" />
       <option name="MAIN_CLASS_NAME" value="inet.dmsx.DMSXClient.DMSXClientTest" />
-      <option name="METHOD_NAME" value="pingServer" />
+      <option name="METHOD_NAME" value="infoNotExistFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DMSXClientTest.shutdown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DMSXClientTest.uploadFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DMSXClient" />
       <extension name="coverage">
         <pattern>
@@ -155,19 +156,26 @@
       </extension>
       <option name="PACKAGE_NAME" value="inet.dmsx.DMSXClient" />
       <option name="MAIN_CLASS_NAME" value="inet.dmsx.DMSXClient.DMSXClientTest" />
-      <option name="METHOD_NAME" value="shutdown" />
+      <option name="METHOD_NAME" value="uploadFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.DMSXClientTest.getNotExistFile" />
+      <item itemvalue="JUnit.DMSXClientTest.infoFile" />
+      <item itemvalue="JUnit.DMSXClientTest.infoNotExistFile" />
+      <item itemvalue="JUnit.DMSXClientTest.uploadFile" />
+      <item itemvalue="JUnit.DMSXClientTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DMSXClientTest" />
-        <item itemvalue="JUnit.DMSXClientTest.pingServer" />
-        <item itemvalue="JUnit.DMSXClientTest.heathServer" />
-        <item itemvalue="JUnit.DMSXClientTest.shutdown" />
-        <item itemvalue="JUnit.DMSXClientTest.deleteFile" />
+        <item itemvalue="JUnit.DMSXClientTest.infoNotExistFile" />
+        <item itemvalue="JUnit.DMSXClientTest.getNotExistFile" />
+        <item itemvalue="JUnit.DMSXClientTest.infoFile" />
+        <item itemvalue="JUnit.DMSXClientTest.uploadFile" />
       </list>
     </recent_temporary>
   </component>
@@ -187,6 +195,8 @@
       <workItem from="1692695373745" duration="1059000" />
       <workItem from="1692780517820" duration="6052000" />
       <workItem from="1692865530013" duration="614000" />
+      <workItem from="1692882220256" duration="1598000" />
+      <workItem from="1693210388446" duration="3864000" />
     </task>
     <task id="LOCAL-00001" summary="INIT Commit">
       <created>1691750251804</created>
@@ -230,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692800145161</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="UPD to http2">
+      <created>1692882538206</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1692882538206</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +260,19 @@
     <MESSAGE value="IMPL pause, resume" />
     <MESSAGE value="IMPL shutdown" />
     <MESSAGE value="IMPL health" />
-    <option name="LAST_COMMIT_MESSAGE" value="IMPL health" />
+    <MESSAGE value="UPD to http2" />
+    <option name="LAST_COMMIT_MESSAGE" value="UPD to http2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/inet/dmsx/DMSXClient/DMSXClientTest.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
